@@ -5,7 +5,14 @@ NEWCOMMAND: '\\newcommand' .*? '\n' ;
 BEGINDOCUMENT: '\\begin{document}' .*? '\n' ;
 
 BEGINABSTRACT: '\\begin{abstract}' .*? '\\end{abstract}' ;
-BEGINEQUATION: '\\begin{equation}' .*? '\\end{equation}' ;
+
+
+EQUATION: BEGINEQUATION (EQUATION| ~BEGINEQUATION)* ENDEQUATION;
+
+
+BEGINEQUATION: '\\begin{equation}';
+ENDEQUATION: '\\end{equation}';
+
 
 MAKETITLE:'\\maketitle';
 NL: '\n';
