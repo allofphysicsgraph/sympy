@@ -1,27 +1,43 @@
 lexer grammar CommonTokensLexer;
-
 DOCUMENTCLASS: '\\documentclass['.*?'\n' ;
 PDFOUTPUT: '\\pdfoutput'.*?'\n' ;
-USEPACKAGE: '\\usepackage{'.*? '}' .*? '\n' ;
 NEWCOMMAND: '\\newcommand' .*? '\n' ;
 BEGINDOCUMENT: '\\begin{document}' .*? '\n' ;
+
 BEGINABSTRACT: '\\begin{abstract}' .*? '\\end{abstract}' ;
 BEGINEQUATION: '\\begin{equation}' .*? '\\end{equation}' ;
+
 MAKETITLE:'\\maketitle';
 NL: '\n';
 WS: [ ];
 RAGGEDBOTTOM: '\\raggedbottom'; 
-TITLE: '\\title{'.*? '}';
-AUTHOR: '\\author{'.*? '}';
-COMMENT: '%' .*? NL ; 
-AFFILIATION: WS* '\\affiliation{' .*? '}';
-SECTION: '\\section{' .*? '}';
 
+BALANCED: '{' (BALANCED|~[{}])* '}';
+
+AUTHOR: '\\author' BALANCED; 
+TITLE: '\\title' BALANCED;
+AFFILIATION: WS* '\\affiliation' BALANCED;
+SECTION: '\\section' BALANCED;
+Cite: '\\cite' BALANCED;
+USEPACKAGE: '\\usepackage' BALANCED .*? '\n' ;
+LABEL: '\\label' BALANCED;
+
+
+FRAC: '\\frac' BALANCED BALANCED;
+
+
+COMMENT: '%' .*? NL ; 
 SingleLineMath: ~'$''$'.*?'$'~'$';
 
-Cite: '\\cite{' .*? '}';
+CARET: '^' ;
 
 
+ALPHA: '\\alpha';
+LEFT: '\\left';
+LPAREN: '(' ;
+RPAREN: ')' ;
+RIGHT: '\\right';
+EQUAL: '=' ;
 MaybeWord: [A-Za-z]+;
 REF: '\\ref';
 WIDEHAT: '\\widehat';
