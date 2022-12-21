@@ -1,0 +1,8 @@
+s/=/EQUALS/g
+s/\\omega/OMEGA/g
+s/_/SUB/g
+s/\\left/LEFT/g
+s/(/LPAREN/g
+s/)/RPAREN/g
+s/\\right/RIGHT/g
+s/\^/CARET/g
