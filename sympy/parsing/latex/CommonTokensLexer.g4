@@ -51,7 +51,9 @@ BALANCED: '{' (BALANCED|~[{}])* '}';
 SYMBOL: 'v' | 'E' | 'c'|'a';
 NOINDENT: '\\noindent';
 SUB: '_';
-OMEGA: '\\omega';
+
+OMEGA: '\\omega'|'\\Omega';
+
 ALPHA: '\\alpha';
 LEFT: '\\left';
 LBRACE: '{' ;
@@ -206,3 +208,147 @@ LDOT: '\\ldot';
 LDOTS: '\\ldots';
 DOTS: '\\dots';
 SQRT: '\\sqrt';
+
+
+KINETIC_ENERGY:
+	'KE'
+	;
+
+POTENTIAL_ENERGY:
+	'PE'
+	;
+
+MOMENTUM:
+	'p'
+	;
+
+
+LBRACKET:
+	'['
+	;
+
+RBRACKET:
+	']'
+	;
+
+CONSTANT:
+	'9.80665'
+	| 'k_{Boltzmann}'
+	| '\\hbar'
+	;
+
+VARIABLE:
+	'v'
+	'y'	//real
+	'x'	//real
+	't'	//real
+	'y_0'	//real, initial position
+	'j'	//integer
+	'i'	//integer
+	'x_0'	//real initial position
+	't_f'  //final time, //real
+	'F'	//force
+	'f'	//frequency
+	'c' 	//speed of light in a vacuum
+	'i'	//imaginary
+	'm'	//mass
+	'k'	//angular wavenumber
+	't_i'	//initial time
+	'N_A'	//Avagadro's constant
+	'a'	//acceleration
+	'\\lambda'	//wavelength
+	;
+
+TOKENS: 
+	'A'
+	|'a_x'
+	|'a_y'
+	|'b'
+	|'B'
+	|'C'
+	|'c/a'
+	|'C_V'
+	|'d'
+	|'\\delta'
+	|'dt'
+	|'dT'
+	|'dv'
+	|'dW'
+	|'dx'
+	|'dy'
+	|'e'
+	|'E'
+	|'E_1'
+	|'E_2'
+	|'\\epsilon'
+	|'f'
+	|'F'
+	|'-g'
+	|'g'
+	|'G'
+	|'\\gamma'
+	|'h'
+	|'H'
+	|'i'
+	|'I'
+	|'I_1'
+	|'I_2'
+	|'j'
+	|'k'
+	|'K'
+	|'KE_1'
+	|'KE_2'
+	|'l'
+	|'\\lambda'
+	|'m'
+	|'m_1'
+	|'m_2'
+	|'m = A m_p'
+	|'m_e'
+	|'m_p'
+	|'n'
+	|'n_1'
+	|'n_2'
+	|'N_A'
+	|'P'
+	|'PE_1'
+	|'PE_2'
+	|'Q'
+	|'r'
+	|'R'
+	|'R_1'
+	|'R_2'
+	|'S'
+	|'T'
+	|'t_0'
+	|'t_f'
+	|'T f'
+	|'\\theta'
+	|'t_i'
+	|'\\times'
+	|'u'
+	|'U'
+	|'v'
+	|'V'
+	|'v_0'
+	|'v_1'
+	|'V_1'
+	|'v_2'
+	|'V_2'
+	|'v_u'
+	|'v_x'
+	|'v_y'
+	|'W'
+	|'-x'
+	|'x'
+	|'x_0'
+	|'x_1'
+	|'x_2'
+	|'x_f'
+	|'y'
+	|'y_0'
+	|'y_f'
+	|'z'
+	|'Z'
+;
+
